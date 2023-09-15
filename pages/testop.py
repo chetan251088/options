@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import time
+import requests
 
 # Function to fetch option chain data from API
 def fetch_option_chain():
