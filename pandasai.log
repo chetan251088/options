@@ -1,0 +1,69 @@
+2023-09-24 05:44:52 [INFO] Question: what is SECURITYID of strike 45200 CE
+2023-09-24 05:44:52 [INFO] Running PandasAI with openai LLM...
+2023-09-24 05:44:52 [INFO] Prompt ID: 04477221-22e4-4efb-b6ba-ae62ca3d1f55
+2023-09-24 05:45:05 [INFO] Code generated:
+```
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart save it to an image in /temp_chart.png and do not show the chart.)
+    4. Output: return a dictionary of:
+    - type (possible values "text", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+    """
+    # Extract the required dataframe
+    df = dfs[0]
+    
+    # Filter the dataframe based on the given condition
+    filtered_df = df[df['SEM_STRIKE_PRICE'] == 45200.0]
+    
+    # Get the SECURITYID of the filtered dataframe
+    security_id = filtered_df['SEM_SMST_SECURITY_ID'].values[0]
+    
+    # Return the result as text
+    result = {
+        "type": "text",
+        "value": f"The SECURITYID of strike 45200 CE is {security_id}."
+    }
+    
+    return result
+```
+
+2023-09-24 05:45:05 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    """
+    Analyze the data
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart save it to an image in /temp_chart.png and do not show the chart.)
+    4. Output: return a dictionary of:
+    - type (possible values "text", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+    """
+    df = dfs[0]
+    filtered_df = df[df['SEM_STRIKE_PRICE'] == 45200.0]
+    security_id = filtered_df['SEM_SMST_SECURITY_ID'].values[0]
+    result = {'type': 'text', 'value': f'The SECURITYID of strike 45200 CE is {security_id}.'}
+    return result
+        ```
+2023-09-24 05:45:05 [WARNING] Error of executing code
+2023-09-24 05:45:05 [INFO] Answer: {'type': 'text', 'value': 'The SECURITYID of strike 45200 CE is 40180.0.'}
+2023-09-24 05:45:05 [INFO] Executed in: 12.843813419342041s
+2023-09-24 05:45:55 [INFO] Question: what is SECURITYID of all the
+ strike 45200 CE
+2023-09-24 05:45:55 [INFO] Running PandasAI with openai LLM...
+2023-09-24 05:45:55 [INFO] Prompt ID: dc829427-2b65-4058-b7de-6d9c982eb01e
+2023-09-24 05:45:55 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-TUPn1***************************************gVdZ. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+2023-09-24 05:51:56 [INFO] Question: find SECURITY_ID of all strikes 45200 CE
+2023-09-24 05:51:56 [INFO] Running PandasAI with openai LLM...
+2023-09-24 05:51:56 [INFO] Prompt ID: 1f4f650b-5f7a-4028-863c-d3e6062fca74
+2023-09-24 05:51:56 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-TUPn1***************************************gVdZ. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
