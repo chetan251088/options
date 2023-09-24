@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import time
-import requests
 
 # Function to fetch option chain data from API
 def fetch_option_chain():
@@ -10,7 +9,7 @@ def fetch_option_chain():
     # Replace this with your actual implementation
 
     # Example: fetching data from a hypothetical API endpoint
-    api_url = "https://mksapi.kotaksecurities.com/60newserviceapi/cmots/derivative/option-chain/i/eyJzeW1ib2wiOiAiQkFOS05JRlRZIiwgImV4cGlyeWRhdGUiOiAiMjAtU2VwLTIwMjMifQ=="
+    api_url = "https://api.example.com/option-chain"
     response = requests.get(api_url)
     data = response.json()
 
@@ -48,8 +47,4 @@ def main():
         time.sleep(60)  # Fetch new data every 60 seconds
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> f8d2bc4e34ee995a28b6c9329f5331a0381999ae
